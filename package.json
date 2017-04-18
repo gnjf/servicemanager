@@ -1,0 +1,38 @@
+{
+  "name": "j4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "standard --verbose | snazzy",
+    "build": "rollup -c rollup.config.prod.js",
+    "build:dev": "rollup -c",
+    "browse": "browser-sync start --server --files '*.html, *.js' --no-notify",
+    "test": "yarn build:dev",
+    "watch": "yarn build:dev -- -w",
+    "start": "yarn build:dev && npm-run-all --parallel watch browse"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "xstream": "^10.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.0",
+    "browser-sync": "^2.18.8",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-json": "^2.1.0",
+    "rollup-plugin-node-builtins": "^2.1.0",
+    "rollup-plugin-node-globals": "^1.1.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-strip": "^1.1.1",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-watch": "^3.2.2",
+    "snazzy": "^6.0.0",
+    "standard": "^9.0.2"
+  }
+}
