@@ -1,6 +1,6 @@
 API
 
-
+```javascript
 manager.registerServices(
   {
     name: 'service_a_name',  // string, name of the service
@@ -70,3 +70,4 @@ manager.listenEvents('service_a_name', '*', '*', _.noop) // will listen for any 
 manager.listenEvents('*', '*', 'destroyed', _.noop) // will listen only for 'destoryed' events
 
 manager.notify(name, id, action, payload)  // sends payload
+```
